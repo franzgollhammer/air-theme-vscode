@@ -23,6 +23,11 @@
     "name": "Franz Gollhammer"
   },
   "publisher": "franzgollhammer",
+  "galleryBanner": {
+    "color": "#18191B",
+    "theme": "dark"
+  },
+  "qna": "marketplace",
   "scripts": {
     "dev": "code --extensionDevelopmentPath=$PWD",
     "dev:insiders": "code-insiders --extensionDevelopmentPath=$PWD",
@@ -45,5 +50,6 @@
   },
   "engines": {
     "vscode": "^1.82.0"
-  }
+  },
+  "icon": "./air-theme.png"
 }

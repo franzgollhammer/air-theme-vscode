@@ -1,0 +1,45 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#82D2CE"/>
+      <stop offset="50%" stop-color="#AAA0FA"/>
+      <stop offset="100%" stop-color="#E394DC"/>
+    </linearGradient>
+    <radialGradient id="bgGrad" cx="30%" cy="25%" r="95%">
+      <stop offset="0%" stop-color="#2A2A34"/>
+      <stop offset="60%" stop-color="#1E1E24"/>
+      <stop offset="100%" stop-color="#141418"/>
+    </radialGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="256" height="256" rx="48" ry="48" fill="url(#bgGrad)"/>
+
+  <!-- Subtle air flow arc (shared signature element) -->
+  <path d="M 38 54 Q 128 28, 218 54" stroke="#87C3FF" stroke-width="1.5" fill="none" opacity="0.25"/>
+  <path d="M 52 72 Q 128 50, 204 72" stroke="#AAA0FA" stroke-width="1" fill="none" opacity="0.2"/>
+
+  <!-- Main "A" letter -->
+  <g filter="url(#softGlow)">
+    <!-- Left diagonal stroke -->
+    <path d="M 72 200 L 128 64" stroke="url(#aGrad)" stroke-width="22" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Right diagonal stroke -->
+    <path d="M 128 64 L 184 200" stroke="url(#aGrad)" stroke-width="22" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Crossbar -->
+    <path d="M 98 150 L 158 150" stroke="#F8C762" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.95"/>
+  </g>
+
+  <!-- Color palette dots (subtle indicator this is a theme) -->
+  <circle cx="100" cy="226" r="3.5" fill="#82D2CE"/>
+  <circle cx="116" cy="226" r="3.5" fill="#AAA0FA"/>
+  <circle cx="132" cy="226" r="3.5" fill="#F8C762"/>
+  <circle cx="148" cy="226" r="3.5" fill="#EFB080"/>
+  <circle cx="164" cy="226" r="3.5" fill="#E394DC"/>
+</svg>
