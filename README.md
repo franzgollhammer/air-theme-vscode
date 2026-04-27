@@ -4,6 +4,8 @@ A VS Code + Cursor port of JetBrains Air — a calm theme family with lavender k
 
 ![Air theme preview](air-theme.png)
 
+> **Pair with [Air File Icons](https://marketplace.visualstudio.com/items?itemName=franzgollhammer.air-file-icons)** ([Open VSX](https://open-vsx.org/extension/franzgollhammer/air-file-icons) · [repo](https://github.com/franzgollhammer/air-icons-vscode)) — matching JetBrains Air–inspired file icon theme.
+
 ## Features
 
 - **Air dark** — near-black `#18191B` editor, soft pastel syntax
