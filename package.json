@@ -1,55 +1,73 @@
 {
   "name": "air-theme",
-  "displayName": "Air",
+  "displayName": "Air Theme",
+  "description": "VS Code + Cursor port of JetBrains Air — a calm theme family (dark + light) with lavender keywords, pink strings, amber numbers, and green types.",
   "version": "1.0.0",
-  "description": "VS Code port of JetBrains Air — a calm, near-black dark theme with purple keywords, pink strings, amber numbers and green types.",
+  "publisher": "franzgollhammer",
+  "author": {
+    "name": "Franz Gollhammer"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
   "categories": [
     "Themes"
   ],
   "keywords": [
-    "Theme",
-    "Dark Theme",
-    "Air",
-    "JetBrains",
-    "JetBrains Air",
-    "Jet Brains"
+    "theme",
+    "color-theme",
+    "dark-theme",
+    "light-theme",
+    "jetbrains",
+    "jetbrains-air",
+    "air",
+    "cursor"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/franzgollhammer/air-theme-vscode"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Franz Gollhammer"
-  },
-  "publisher": "franzgollhammer",
   "galleryBanner": {
     "color": "#18191B",
     "theme": "dark"
   },
   "qna": "marketplace",
-  "scripts": {
-    "dev": "code --extensionDevelopmentPath=$PWD",
-    "dev:insiders": "code-insiders --extensionDevelopmentPath=$PWD",
-    "package": "npx @vscode/vsce package",
-    "install:local": "npx @vscode/vsce package && code --install-extension $(ls -t *.vsix | head -1) --force",
-    "publish": "npx @vscode/vsce publish && bash -c 'source ~/.zshrc 2>/dev/null; npx ovsx publish -p \"$OVSX_PAT\"'"
-  },
+  "pricing": "Free",
   "contributes": {
     "themes": [
       {
         "label": "Air dark",
         "path": "./themes/air-dark-color-theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "label": "Air light",
+        "path": "./themes/air-light-color-theme.json",
+        "uiTheme": "vs"
       }
     ]
   },
+  "scripts": {
+    "dev": "code --extensionDevelopmentPath=$PWD",
+    "dev:insiders": "code-insiders --extensionDevelopmentPath=$PWD",
+    "build:light": "python3 scripts/make-light.py",
+    "package": "bash scripts/package.sh",
+    "package:list": "npx @vscode/vsce ls",
+    "publish": "bash scripts/publish-all.sh",
+    "publish:vscode": "bash scripts/publish-vscode.sh",
+    "publish:openvsx": "bash scripts/publish-openvsx.sh",
+    "release": "bash scripts/release.sh",
+    "install:local": "bash scripts/install-local.sh",
+    "verify": "bash scripts/verify.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/franzgollhammer/air-theme-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/franzgollhammer/air-theme-vscode/issues"
+  },
+  "homepage": "https://github.com/franzgollhammer/air-theme-vscode#readme",
   "devDependencies": {
     "@vscode/vsce": "^3.7.1",
     "ovsx": "^0.10.8"
   },
-  "engines": {
-    "vscode": "^1.82.0"
-  },
-  "icon": "./air-theme.png"
+  "icon": "air-theme.png"
 }

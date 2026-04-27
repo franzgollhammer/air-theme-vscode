@@ -1,6 +1,16 @@
-.vscode/**
+.git/**
 .github/**
 .gitignore
+.gitattributes
+.claude/**
+.vscode/**
+.worktrees/**
+.claude-*
 node_modules/**
 scripts/**
+RELEASING.md
 *.vsix
+.DS_Store
+**/.DS_Store
+air-theme.svg
+air-theme-512.png
