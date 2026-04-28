@@ -5,6 +5,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this pr
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-04-27
+
+### Fixed
+
+- Object property keys (`templateName: ...`, `language: ...`) now render as default foreground instead of purple. Destructured variable declarations (`const { htmlBody } = ...`) keep purple via semantic highlighting. Mirrored across dark + light.
+
 ## [1.0.0] - 2026-04-23
 
 ### Added
