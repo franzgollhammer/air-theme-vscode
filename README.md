@@ -2,7 +2,8 @@
 
 A VS Code + Cursor port of JetBrains Air — a calm theme family with lavender keywords, pink strings, amber numbers, and green function params.
 
-![Air theme preview](air-theme.png)
+![Air dark](preview-dark.png)
+![Air light](preview-light.png)
 
 > **Pair with [Air File Icons](https://marketplace.visualstudio.com/items?itemName=franzgollhammer.air-file-icons)** ([Open VSX](https://open-vsx.org/extension/franzgollhammer/air-file-icons) · [repo](https://github.com/franzgollhammer/air-icons-vscode)) — matching JetBrains Air–inspired file icon theme.
 
