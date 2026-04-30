@@ -8,6 +8,7 @@
 .claude-*
 node_modules/**
 scripts/**
+terminal-themes/**
 RELEASING.md
 *.vsix
 .DS_Store
