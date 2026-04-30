@@ -5,51 +5,6 @@ A VS Code + Cursor port of JetBrains Air — a calm theme family with lavender k
 ![Air dark](preview-dark.png)
 ![Air light](preview-light.png)
 
-## Terminal themes
-
-Matching palettes for Ghostty, iTerm2, and Warp live in [`terminal-themes/`](terminal-themes).
-
-### Ghostty
-
-Copy theme file into Ghostty's themes dir, then reference it in config:
-
-```sh
-mkdir -p ~/.config/ghostty/themes
-cp terminal-themes/ghostty/air-dark ~/.config/ghostty/themes/
-cp terminal-themes/ghostty/air-light ~/.config/ghostty/themes/
-```
-
-In `~/.config/ghostty/config`:
-
-```
-theme = air-dark
-# or: theme = air-light
-# or split: theme = light:air-light,dark:air-dark
-```
-
-Reload: `Cmd+Shift+,` (macOS) or restart Ghostty.
-
-### iTerm2
-
-1. iTerm2 → Settings → Profiles → Colors
-2. **Color Presets…** → **Import…**
-3. Pick `terminal-themes/iterm2/air-dark.itermcolors` (and/or `air-light.itermcolors`)
-4. **Color Presets…** → select **air-dark** or **air-light**
-
-### Warp
-
-Copy YAML files into Warp's themes dir, then pick from theme picker:
-
-```sh
-mkdir -p ~/.warp/themes
-cp terminal-themes/warp/air-dark.yaml ~/.warp/themes/
-cp terminal-themes/warp/air-light.yaml ~/.warp/themes/
-```
-
-Open Warp → `Cmd+P` → **Open Theme Picker** → choose **Air dark** or **Air light**.
-
-> **Pair with [Air File Icons](https://marketplace.visualstudio.com/items?itemName=franzgollhammer.air-file-icons)** ([Open VSX](https://open-vsx.org/extension/franzgollhammer/air-file-icons) · [repo](https://github.com/franzgollhammer/air-icons-vscode)) — matching JetBrains Air–inspired file icon theme.
-
 ## Features
 
 - **Air dark** — near-black `#18191B` editor, soft pastel syntax
@@ -125,6 +80,53 @@ Editor background: `#18191B`.
 | `#A54553`   | `this` / `self`                                                |
 
 Editor background: `#FBFBFC`.
+
+## Terminal themes
+
+Matching palettes for Ghostty, iTerm2, and Warp live in [`terminal-themes/`](terminal-themes).
+
+### Ghostty
+
+Copy theme file into Ghostty's themes dir, then reference it in config:
+
+```sh
+mkdir -p ~/.config/ghostty/themes
+cp terminal-themes/ghostty/air-dark ~/.config/ghostty/themes/
+cp terminal-themes/ghostty/air-light ~/.config/ghostty/themes/
+```
+
+In `~/.config/ghostty/config`:
+
+```
+theme = air-dark
+# or: theme = air-light
+# or split: theme = light:air-light,dark:air-dark
+```
+
+Reload: `Cmd+Shift+,` (macOS) or restart Ghostty.
+
+### iTerm2
+
+1. iTerm2 → Settings → Profiles → Colors
+2. **Color Presets…** → **Import…**
+3. Pick `terminal-themes/iterm2/air-dark.itermcolors` (and/or `air-light.itermcolors`)
+4. **Color Presets…** → select **air-dark** or **air-light**
+
+### Warp
+
+Copy YAML files into Warp's themes dir, then pick from theme picker:
+
+```sh
+mkdir -p ~/.warp/themes
+cp terminal-themes/warp/air-dark.yaml ~/.warp/themes/
+cp terminal-themes/warp/air-light.yaml ~/.warp/themes/
+```
+
+Open Warp → `Cmd+P` → **Open Theme Picker** → choose **Air dark** or **Air light**.
+
+## Pair with Air File Icons
+
+> **[Air File Icons](https://marketplace.visualstudio.com/items?itemName=franzgollhammer.air-file-icons)** ([Open VSX](https://open-vsx.org/extension/franzgollhammer/air-file-icons) · [repo](https://github.com/franzgollhammer/air-icons-vscode)) — matching JetBrains Air–inspired file icon theme.
 
 ## Development
 
