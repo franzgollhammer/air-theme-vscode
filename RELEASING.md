@@ -63,15 +63,15 @@ bash scripts/install-local.sh cursor # into Cursor
 bash scripts/install-local.sh code-insiders
 ```
 
-## Regenerating the light variant
+## Regenerating theme variants
 
-The light theme is generated from the dark one by `scripts/make-light.py`:
+The light theme is generated from the dark one, then both italic variants are generated from their normal themes:
 
 ```sh
-npm run build:light
+npm run build:themes
 ```
 
-Edit the color map in `scripts/make-light.py`, re-run, and commit both the script and `themes/air-light-color-theme.json`.
+Edit the generators, re-run, and commit the scripts with all generated theme files. Packaging also regenerates the variants automatically.
 
 ## After release
 
