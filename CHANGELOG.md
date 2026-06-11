@@ -5,6 +5,16 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this pr
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-06-11
+
+### Added
+
+- **Air dark italic** and **Air light italic** variants with bold functions and italic strings/parameters.
+
+### Changed
+
+- Synced syntax, selection, cursor, integrated terminal, Ghostty, iTerm2, and Warp colors with the latest Zed Air palette.
+
 ## [1.0.2] - 2026-04-28
 
 ### Added

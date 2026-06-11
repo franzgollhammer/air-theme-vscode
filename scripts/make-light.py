@@ -20,15 +20,17 @@ RGB_MAP = {
     "aaa0fa": "5A4ECF",   # purple keywords / properties / imports
     "e394dc": "B03A88",   # strings (pink)
     "efb080": "A85A29",   # classes / types (salmon)
-    "a8cc7c": "4E7A2A",   # parameters / greens
+    "a8cc7c": "62661E",   # parameters
     "82d2ce": "1F7F78",   # storage / control keywords (teal)
-    "f8c762": "8D6B1F",   # functions / methods (amber)
-    "ebc88d": "8F6614",   # numeric / units / constants
+    "f8c762": "8D6B1F",   # amber accents
+    "e5c995": "4D18B8",   # functions / methods
+    "ac9df8": "962B89",   # constants
+    "ebc88d": "962B89",   # numeric / units / constants
     "87c3ff": "0E5FA8",   # html tag / class / css prop-name
     "cc7c8a": "A54553",   # variable.language (rose)
     "5b8ce5": "1C5DB5",   # markdown link title
     "fad075": "8D6B1F",   # meta.tag
-    "909192": "8C8C8C",   # comment
+    "909192": "747474",   # comment
     "e4e4e4": "212124",   # xi translucent base
 
     # ---------- UI backgrounds (inverted) ----------
@@ -87,7 +89,7 @@ RGB_MAP = {
     "c1c1c1": "A8ACB2",
     "c3c5c9": "3A3D42",   # ansiBrightWhite
     "cfcfcf": "1F2024",   # ansiBlack
-    "dfe0e3": "6E7177",   # ansiBrightBlack
+    "dfe0e3": "010101",   # ansiBlack
     "e0e0e0": "2A2D33",
     "e7e7e7": "1F2024",
     "eeeeee": "2A2D33",
@@ -207,7 +209,7 @@ RGB_MAP = {
     "40b0a6": "1F7F78",
 
     # ---------- highlights / selections ----------
-    "264f78": "A6CCFF",   # selection
+    "264f78": "CCE2F5",   # selection
     "add6ff": "005FB0",   # selection highlight (token)
     "26477 8": "A6CCFF",   # (typo-proof)
     "264778": "A6CCFF",
@@ -237,6 +239,22 @@ RGB_MAP = {
     "a0a0a0": "6E7177",  # dup
     "0000 00": "000000",
     "3a3d41": "D0D2D7",  # dup
+
+    # ---------- synced terminal palette ----------
+    "b52425": "B73B4C",
+    "459b71": "6CB969",
+    "f2d181": "7E7139",
+    "5a8be4": "3160B4",
+    "dc87dc": "BC44F1",
+    "52b6d2": "3A8081",
+    "c2c4c8": "292929",
+    "d84d59": "F0A8A9",
+    "93cfcc": "77EF6A",
+    "d49339": "AC9A4C",
+    "2965dd": "2F72F6",
+    "d858d7": "BB38F6",
+    "63c8e1": "6ADDFB",
+    "fefefe": "000000",
 }
 
 # Special handling: ffffff with alpha flips to 000000 with alpha (black overlay).
@@ -267,6 +285,43 @@ def main() -> None:
     # Header patch
     out = out.replace('"type": "dark"', '"type": "light"', 1)
     out = out.replace('"name": "Air dark"', '"name": "Air light"', 1)
+
+    # The light syntax palette intentionally diverges from the dark palette
+    # for strings, keywords, headings, and cursors.
+    token_colors = out.index('  "tokenColors": [')
+    before_tokens, tokens = out[:token_colors], out[token_colors:]
+    tokens = tokens.replace("#E394DC", "#306C24")
+    tokens = tokens.replace("#B03A88", "#306C24")
+    tokens = tokens.replace("#8F6614", "#962B89")
+    tokens = tokens.replace("#4E7A2A", "#62661E")
+    tokens = tokens.replace(
+        '"scope": "variable.language",\n      "settings": {\n        "foreground": "#A54553"',
+        '"scope": "variable.language",\n      "settings": {\n        "foreground": "#84527D"',
+    )
+    tokens = tokens.replace(
+        '"scope": "markup.bold,todo.bold",\n      "settings": {\n        "foreground": "#8D6B1F"',
+        '"scope": "markup.bold,todo.bold",\n      "settings": {\n        "foreground": "#090909"',
+    )
+    tokens = tokens.replace(
+        '"scope": "punctuation.definition.bold.markdown",\n      "settings": {\n        "foreground": "#8D6B1F"',
+        '"scope": "punctuation.definition.bold.markdown",\n      "settings": {\n        "foreground": "#090909"',
+    )
+    tokens = tokens.replace(
+        '"scope": "keyword",\n      "settings": {\n        "foreground": "#1F7F78"',
+        '"scope": "keyword",\n      "settings": {\n        "foreground": "#2F626C"',
+    )
+    tokens = tokens.replace(
+        '"scope": "markup.heading",\n      "settings": {\n        "foreground": "#962B89"',
+        '"scope": "markup.heading",\n      "settings": {\n        "foreground": "#2F626C"',
+    )
+    tokens = tokens.replace(
+        '"scope": "entity.name.section.markdown",\n      "settings": {\n        "foreground": "#962B89"',
+        '"scope": "entity.name.section.markdown",\n      "settings": {\n        "foreground": "#2F626C"',
+    )
+    out = before_tokens + tokens
+    out = out.replace('"terminal.ansiBrightBlack": "#90959D"', '"terminal.ansiBrightBlack": "#6E7177"')
+    out = out.replace('"editorCursor.foreground": "#FFFFFF"', '"editorCursor.foreground": "#000000"')
+    out = out.replace('"terminalCursor.foreground": "#FFFFFF"', '"terminalCursor.foreground": "#000000"')
 
     DST.write_text(out)
     print(f"Wrote {DST.relative_to(ROOT)} ({len(out)} bytes)")

@@ -1,8 +1,8 @@
 {
   "name": "air-theme",
   "displayName": "Air Theme",
-  "description": "VS Code + Cursor port of JetBrains Air — a calm theme family (dark + light) with lavender keywords, pink strings, amber numbers, and green types.",
-  "version": "1.0.4",
+  "description": "VS Code + Cursor port of JetBrains Air — dark, light, and italic variants with calm syntax and matched terminal palettes.",
+  "version": "1.1.0",
   "publisher": "franzgollhammer",
   "author": {
     "name": "Franz Gollhammer"
@@ -38,8 +38,18 @@
         "uiTheme": "vs-dark"
       },
       {
+        "label": "Air dark italic",
+        "path": "./themes/air-dark-italic-color-theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "label": "Air light",
         "path": "./themes/air-light-color-theme.json",
+        "uiTheme": "vs"
+      },
+      {
+        "label": "Air light italic",
+        "path": "./themes/air-light-italic-color-theme.json",
         "uiTheme": "vs"
       }
     ]
@@ -48,6 +58,8 @@
     "dev": "code --extensionDevelopmentPath=$PWD",
     "dev:insiders": "code-insiders --extensionDevelopmentPath=$PWD",
     "build:light": "python3 scripts/make-light.py",
+    "build:italic": "python3 scripts/make-italic.py",
+    "build:themes": "npm run build:light && npm run build:italic",
     "package": "bash scripts/package.sh",
     "package:list": "npx @vscode/vsce ls",
     "publish": "bash scripts/publish-all.sh",

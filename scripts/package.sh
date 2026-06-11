@@ -6,8 +6,13 @@ source "$(dirname "${BASH_SOURCE[0]}")/common.sh"
 
 require_cmd node
 require_cmd npx
+require_cmd python3
 
 cd "$ROOT_DIR"
+
+info "regenerating theme variants"
+python3 scripts/make-light.py
+python3 scripts/make-italic.py
 
 VERSION="$(pkg_version)"
 OUT="$(vsix_path)"

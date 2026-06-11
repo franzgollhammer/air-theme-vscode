@@ -1,7 +1,7 @@
 {
   "$schema": "vscode://schemas/color-theme",
   "type": "dark",
-  "name": "Air dark",
+  "name": "Air dark italic",
   "semanticHighlighting": true,
   "colors": {
     "actionBar.toggledBackground": "#383a49",
@@ -926,7 +926,10 @@
     //"window.inactiveBorder": null
   },
   "semanticTokenColors": {
-    "parameter.declaration": "#A8CC7C",
+    "parameter.declaration": {
+      "foreground": "#A8CC7C",
+      "italic": true
+    },
     "variable.declaration:javascript": "#AAA0FA",
     "variable.declaration:typescript": "#AAA0FA",
     "variable.declaration:javascriptreact": "#AAA0FA",
@@ -935,10 +938,25 @@
     "variable.readonly.declaration:typescript": "#AAA0FA",
     "variable.readonly.declaration:javascriptreact": "#AAA0FA",
     "variable.readonly.declaration:typescriptreact": "#AAA0FA",
-    "function": "#E5C995",
-    "function.declaration": "#E5C995",
-    "method": "#E5C995",
-    "method.declaration": "#E5C995"
+    "function": {
+      "foreground": "#E5C995",
+      "bold": true
+    },
+    "function.declaration": {
+      "foreground": "#E5C995",
+      "bold": true
+    },
+    "method": {
+      "foreground": "#E5C995",
+      "bold": true
+    },
+    "method.declaration": {
+      "foreground": "#E5C995",
+      "bold": true
+    },
+    "parameter": {
+      "italic": true
+    }
   },
   "tokenColors": [
     {
@@ -2465,6 +2483,35 @@
     },
     {
       "scope": "markup.italic.markdown",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Air italic variant: bold functions",
+      "scope": [
+        "entity.name.function",
+        "support.function",
+        "variable.function",
+        "entity.name.function.decorator",
+        "meta.function-call entity.name.function",
+        "meta.function-call support.function",
+        "meta.function-call variable.function"
+      ],
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Air italic variant: italic strings",
+      "scope": "string",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Air italic variant: italic parameters",
+      "scope": ["variable.parameter", "function.parameter"],
       "settings": {
         "fontStyle": "italic"
       }
