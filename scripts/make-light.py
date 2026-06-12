@@ -320,6 +320,7 @@ def main() -> None:
     )
     out = before_tokens + tokens
     out = out.replace('"terminal.ansiBrightBlack": "#90959D"', '"terminal.ansiBrightBlack": "#6E7177"')
+    out = out.replace('"statusBarItem.hoverForeground": "#FFFFFF"', '"statusBarItem.hoverForeground": "#000000"')
     out = out.replace('"tab.activeForeground": "#FFFFFF"', '"tab.activeForeground": "#000000"')
     out = out.replace('"editorCursor.foreground": "#FFFFFF"', '"editorCursor.foreground": "#000000"')
     out = out.replace('"terminalCursor.foreground": "#FFFFFF"', '"terminalCursor.foreground": "#000000"')
