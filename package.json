@@ -2,7 +2,7 @@
   "name": "air-theme",
   "displayName": "Air Theme",
   "description": "VS Code + Cursor port of JetBrains Air — dark, light, and italic variants with calm syntax and matched terminal palettes.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "publisher": "franzgollhammer",
   "author": {
     "name": "Franz Gollhammer"
