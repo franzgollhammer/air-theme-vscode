@@ -117,7 +117,7 @@
     "tab.activeBackground": "#FBFBFC",
     "tab.activeBorder": "#FBFBFC",
     "tab.activeBorderTop": "#005FB0",
-    "tab.activeForeground": "#FFFFFF",
+    "tab.activeForeground": "#000000",
     "tab.border": "#E5E7EA",
     "tab.hoverBackground": "#FBFBFC",
     "tab.inactiveBackground": "#FBFBFC",
