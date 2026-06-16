@@ -5,6 +5,18 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this pr
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-06-12
+
+### Fixed
+
+- Status bar hover text is now visible in Air light and Air light italic.
+
+## [1.1.1] - 2026-06-12
+
+### Fixed
+
+- Active editor tab text is now visible in Air light and Air light italic.
+
 ## [1.1.0] - 2026-06-11
 
 ### Added
